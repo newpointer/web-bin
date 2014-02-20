@@ -1,0 +1,37 @@
+{
+    "name" : "nullpointer-web-bin",
+    "version" : "0.0.1-SNAPSHOT",
+    "description": "webapp scripts",
+    "keywords": [],
+
+    "author": {
+        "name": "Nullpointer",
+        "url": "http://null-pointer.ru/"
+    },
+
+    "files": ["docs", "lib"],
+    "main": "./lib/index",
+
+    "repository": {
+    },
+
+    "dependencies": {
+        "underscore": "1.4.x",
+        "fs-extra": "0.8.x",
+        "glob": "3.2.x",
+        "byline": "2.0.x",
+        "less": "*",
+        "csso": "*",
+        "requirejs": "2.*"
+    },
+
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-clean": "~0.5",
+        "grunt-contrib-jshint": "~0.8",
+        "grunt-contrib-copy": "~0.5.0",
+
+        "grunt-mocha-test": "~0.9",
+        "chai": "*"
+    }
+}
