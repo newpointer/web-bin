@@ -23,6 +23,10 @@
 > Замена `url("path/to/resource")` на `url("path/to/resource?hashResource")` в файлах `CSS`, `LESS`,
 где `hashResource` - sha1 хэш от файла, на который ссылается ресурс.
 
+> Или замена `url("path/to/resource")` на `url(data:base64)` в файлах `CSS`, `LESS`.
+
+> Регулируется флагом `urlToBase64 = true|false`, по умолчанию `false`.
+
     var processResources = wb.processResources;
 
     var options = {
@@ -30,6 +34,9 @@
         // Если процессинг пропущен,
         // то будет выполнено копирование из inputDir в outputDir
         skipProcess: false,
+
+        // Заменить url на data:base64?
+        urlToBase64: false,
 
         // Директория исходных файлов
         inputDir: 'path/to/src',

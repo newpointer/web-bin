@@ -22,6 +22,7 @@
         "byline": "2.0.x",
         "less": "*",
         "csso": "*",
+        "datauri": "0.5.x",
         "requirejs": "2.*"
     },
 

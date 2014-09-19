@@ -1,0 +1,19 @@
+/**/
+
+.background-1 {
+    height: 200px;
+    background: url("./i/b-1.png") 0 0 repeat-x;
+}
+
+.background-2 {
+    height: 200px;
+    background: url("./i/b-2.png") 0 0 repeat-x;
+}
+
+.background-3 {
+    background-image: @url;
+}
+
+.background-x {
+    background: url("./file.noexists") 0 0 repeat-x;
+}
