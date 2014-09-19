@@ -12,7 +12,7 @@
 
 ### Установка
 
-    npm install git+ssh://git@repo.nkb:nullpointer/web-bin.git
+    npm install newpointer/web-bin.git
 
 ### Импорт
 
