@@ -2,6 +2,8 @@
 
 > Скрипты для веб-приложений
 
+[Использование](https://github.com/newpointer/web-bin/blob/master/docs/docs.md)
+
 ##Окружение
 
 * node.js 0.10.x+
