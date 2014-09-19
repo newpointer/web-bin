@@ -15,7 +15,7 @@ var fs              = require('fs-extra'),
 //
 var PROCESSED_FILE_EXT          = '.process',
     CSS_PATTERN                 = '**/*.+(css|less)',
-    CSS_URL_REGEXP              = 'url\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)',
+    CSS_URL_REGEXP              = 'url\\s*\\(\\s*["\']*(?!data:)((?:[^"\'\\\\]|\\\\.)*)["\']*\\s*\\)',
     CSS_URL_HASH_FORMAT         = 'url("%s?%s")',   // url("<url>?<hash>")
     CSS_URL_DATA_BASE_64_FORMAT = 'url(%s)';        // url(data:<MIME-type>;base64,<data>)
 
@@ -90,6 +90,8 @@ function doCssFile(filePath, callback) {
             });
 
             urlResults.forEach(function(url){
+                console.info('url', url);
+
                 var p = path.join(path.dirname(filePath), url);
 
                 if (!fs.existsSync(p) || !fs.statSync(p).isFile()) {
@@ -98,11 +100,11 @@ function doCssFile(filePath, callback) {
                 }
 
                 if (options.urlToBase64) {
-                    // Заменить url("path/to/resource") на url(data:base64)
+                    // Заменить url(path/to/resource) на url(data:base64)
                     var dataUri = DataUri(p);
                     str = str.replace(urlRegexp, util.format(CSS_URL_DATA_BASE_64_FORMAT, dataUri));
                 } else {
-                    // Заменить url("path/to/resource") на url("path/to/resource?hashResource")
+                    // Заменить url(path/to/resource) на url("path/to/resource?hashResource")
                     var hash = helper.getFileHash(p);
                     str = str.replace(urlRegexp, util.format(CSS_URL_HASH_FORMAT, url, hash));
                 }

@@ -20,10 +20,10 @@
 
 ### Процессинг ресурсов
 
-> Замена `url("path/to/resource")` на `url("path/to/resource?hashResource")` в файлах `CSS`, `LESS`,
+> Замена `url(path/to/resource)` на `url("path/to/resource?hashResource")` в файлах `CSS`, `LESS`,
 где `hashResource` - sha1 хэш от файла, на который ссылается ресурс.
 
-> Или замена `url("path/to/resource")` на `url(data:base64)` в файлах `CSS`, `LESS`.
+> Или замена `url(path/to/resource)` на `url(data:base64)` в файлах `CSS`, `LESS`.
 
 > Регулируется флагом `urlToBase64 = true|false`, по умолчанию `false`.
 
