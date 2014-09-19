@@ -33,7 +33,7 @@ function run(o, callback) {
     if (options.skipOptimize) {
         console.log('Оптимизация отключена');
         writePropertiesFile(null);
-        callback();
+        callback(null);
     } else {
         optimize(callback);
     }
@@ -43,8 +43,9 @@ function optimize(callback) {
     console.log('Оптимизация...');
 
     requirejs.optimize(options.requirejs, function(results) {
-        writePropertiesFile(helper.getFileHash(options.mainFile));
-        callback();
+        var hash = helper.getFileHash(options.mainFile);
+        writePropertiesFile(hash);
+        callback(hash);
     });
 }
 
