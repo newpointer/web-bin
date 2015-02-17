@@ -7,7 +7,7 @@ var fs              = require('fs-extra'),
     byline          = require('byline'),
     util            = require('util'),
     glob            = require('glob'),
-    _               = require('underscore'),
+    _               = require('lodash'),
     path            = require('path'),
     DataUri         = require('datauri'),
     helper          = require('./helper');
@@ -123,4 +123,3 @@ function doCssFile(filePath, callback) {
 
 //
 module.exports.run = run;
-

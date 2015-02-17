@@ -1,11 +1,11 @@
 {
     "name" : "nullpointer-web-bin",
-    "version" : "0.0.1-SNAPSHOT",
+    "version" : "1.0.0-SNAPSHOT",
     "description": "webapp scripts",
     "keywords": [],
 
     "author": {
-        "name": "Nullpointer",
+        "name": "nullpointer",
         "url": "http://null-pointer.ru/"
     },
 
@@ -16,7 +16,7 @@
     },
 
     "dependencies": {
-        "underscore": "1.4.x",
+        "lodash": "3.*",
         "fs-extra": "0.8.x",
         "glob": "3.2.x",
         "byline": "2.0.x",

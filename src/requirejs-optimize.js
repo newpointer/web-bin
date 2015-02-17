@@ -4,7 +4,7 @@
 
 //
 var fs              = require('fs'),
-    _               = require('underscore'),
+    _               = require('lodash'),
     requirejs       = require('requirejs'),
     helper          = require('./helper');
 
@@ -57,4 +57,3 @@ function writePropertiesFile(hash) {
 
 //
 module.exports.run = run;
-
