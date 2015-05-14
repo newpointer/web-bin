@@ -51,6 +51,7 @@ describe('web-bin test...', function(){
         var options = {
             skipOptimize: true,
             propertiesFile: __dirname + '/requirejs-optimize/web-resources-build.properties',
+            buildIdPropertyName: 'test.web.resources.build.id',
             mainFile: '',
             requirejs: {
                 dir: __dirname + '/requirejs-optimize/build'

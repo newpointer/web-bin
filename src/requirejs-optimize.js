@@ -9,14 +9,17 @@ var fs              = require('fs'),
     helper          = require('./helper');
 
 //
+var defaultBuildIdPropertyName = 'web.resources.build.id';
+
 var options = {
     // Пропустить оптимизацию?
     // Если оптимизация пропущена,
     // то свойство web.resources.build.id будет равно null
     skipOptimize: false,
 
-    // Java-properties файл для записи свойства web.resources.build.id
+    // Java-properties файл для записи свойства buildIdPropertyName
     propertiesFile: 'path/to/file.properties',
+    buildIdPropertyName: defaultBuildIdPropertyName,
 
     // Путь к файлу, от которого будет взят хэш для записи свойства web.resources.build.id
     mainFile: 'path/to/main',
@@ -52,7 +55,10 @@ function optimize(callback) {
 function writePropertiesFile(hash) {
     console.log('Записан файл свойств с хэшем', hash);
     console.log(options.propertiesFile);
-    fs.writeFileSync(options.propertiesFile, 'web.resources.build.id=' + (hash ? hash : 'null') + '\n');
+    fs.writeFileSync(
+        options.propertiesFile,
+        (options.buildIdPropertyName || defaultBuildIdPropertyName) + '=' + (hash ? hash : 'null') + '\n'
+    );
 }
 
 //
